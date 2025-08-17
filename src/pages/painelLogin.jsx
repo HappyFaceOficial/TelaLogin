@@ -1,50 +1,61 @@
 import { useState } from "react"
+import backGround from "../assets/backGround.jpg";
 import "./painelLogin.css"
 
-export default function TelaCadastro() {
-  const [form, setForm] = useState({ email: "", senha: "" });
+export default function TelaLogin() {
+  const [botaos, setBotaos] = useState({ email: "", senha: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setBotaos((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleEntrar = () => {
-    console.log("Entrar:", form);
+    console.log("Entrar:", botaos);
   };
 
   const handleCadastrar = () => {
-    console.log("Cadastrar:", form);
+    console.log("Cadastrar:", botaos);
   };
 
   return (
-    <div>
+    <div className="container">
       <header className="logo">LOGO</header>
+
       <main>
-        <div className="backGround">BACKGROUND</div>
-        <form>
+        <div className="backGround">
+          <img src={backGround} alt="Background"  />
+        </div>
+
+        <form className="painelCentral">
+
           <input
             type="email"
             name="email"
-            placeholder="EMAIL"
-            value={form.email}
+            placeholder="E-mail"
+            value={botaos.email}
             onChange={handleChange}
           />
+
           <input
             type="password"
             name="senha"
-            placeholder="SENHA"
-            value={form.senha}
+            placeholder="Senha"
+            value={botaos.senha}
             onChange={handleChange}
           />
+
           <button type="button" onClick={handleEntrar}>
-            ENTRAR
+            Entrar
           </button>
+
           <button type="button" onClick={handleCadastrar}>
-            CADASTRAR
+            Cadastrar
           </button>
+
         </form>
       </main>
     </div>
+
   );
 }
