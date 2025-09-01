@@ -1,5 +1,6 @@
 import { useState } from "react"
 import backGround from "../assets/backGround.jpg";
+import logoPixel from '../assets/logo_pixel.png';
 import "./painelLogin.css"
 
 export default function TelaLogin() {
@@ -20,7 +21,9 @@ export default function TelaLogin() {
 
   return (
     <div className="container">
-      <header className="logo">LOGO</header>
+      <header className="logo">
+        <img src={logoPixel} alt="Logo Pixel" />
+      </header>
 
       <main>
         <div className="backGround">

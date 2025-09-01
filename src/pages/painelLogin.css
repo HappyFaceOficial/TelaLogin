@@ -23,14 +23,14 @@ body, html {
   top: 0;
   left: 0;
   z-index: 10;
-  transition: box-shadow 0.3s;
+  transition: "box-shadow" 0.3s;
 }
 
 .logo:hover {
 
   box-shadow: 
-    0 6px 10px 0 blue,
-    0 6px 10px 0 red inset;
+    0 6px 10px 0 rgb(230, 230, 230, 0.384),
+    0 6px 10px 0 rgba(255, 255, 255, 0.384) inset;
 }
 
 main {
